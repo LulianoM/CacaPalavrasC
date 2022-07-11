@@ -4,11 +4,13 @@
 #include <time.h>
 #include "variables.h"
 
+char   line[MAX_LINE_LENGTH];
+char   words[MAX_NUM_PALAVRAS][MAX_LINE_LENGTH];
+char   tabuleiro[N][N];
+
 void le_caca_palavras(char *arquivo) {
     FILE* f;
-    char  line[MAX_LINE_LENGTH];
-    char   words[MAX_NUM_PALAVRAS][MAX_LINE_LENGTH];
-
+    
     f = fopen(arquivo, "r");
 
     if(f == NULL) {
@@ -33,6 +35,19 @@ void le_caca_palavras(char *arquivo) {
 }
 
 /*
+void encontra_intersecao(){
+    /* Fazer um looping pelas palavras 
+    int positionWordOne, positionWordTwo = 0;
+    char word;
+    for(word )
+
+}
+
+void cria_tabuleiro(){
+     O tamanho do tabuleiro será dado pelo len da maior palavras*2 
+}
+
+
 int letraexiste(char letra) {
 
     for(int j = 0; j < strlen(word); j++) {
@@ -46,5 +61,7 @@ int letraexiste(char letra) {
 */
 
 int main(){
-    le_caca_palavras( "palavras.txt");
+  le_caca_palavras("palavras.txt");
+  /* int** tabuleiro = malloc(N*sizeof(int*))
+  for append  tabuleiro no malloc */
 }
