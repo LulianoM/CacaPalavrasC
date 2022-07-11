@@ -6,7 +6,6 @@
 
 char   line[MAX_LINE_LENGTH];
 char   words[MAX_NUM_PALAVRAS][MAX_LINE_LENGTH];
-char   tabuleiro[N][N];
 
 void le_caca_palavras(char *arquivo) {
     FILE* f;
@@ -24,44 +23,37 @@ void le_caca_palavras(char *arquivo) {
             printf("Limite máximo de palavras atingido.\n\n");
             break;
         }
-        printf("%s\n", line);
         strcpy(words[num_palavra], line);
-        printf("%s\n", words[num_palavra]);
         num_palavra++;
-        printf("%d\n", num_palavra);
     }
      
     fclose(f);
 }
 
-/*
 void encontra_intersecao(){
-    /* Fazer um looping pelas palavras 
-    int positionWordOne, positionWordTwo = 0;
-    char word;
-    for(word )
+    /* nao precisa receber a lista (words) pois ela ja é global */
+    int positionalLetterOne, positionalLetterTwo, positionalWordOne, positionalWordTwo = 0;
 
-}
-
-void cria_tabuleiro(){
-     O tamanho do tabuleiro será dado pelo len da maior palavras*2 
-}
-
-
-int letraexiste(char letra) {
-
-    for(int j = 0; j < strlen(word); j++) {
-        if(letra == word[j]) {
-            return 1;
+    for(positionalWordOne=0; positionalWordOne<10; positionalWordOne++){
+        for(positionalWordTwo=0; positionalWordTwo<10; positionalWordTwo++){
+            if (positionalWordTwo==positionalWordOne){
+                break;
+            }
+            /* refactor para uma func no futuro */
+            for(positionalLetterOne=0; positionalLetterOne<strlen(words[positionalWordOne]); positionalLetterOne++){
+                for (positionalLetterTwo=0; positionalLetterTwo<strlen(words[positionalWordTwo]);positionalLetterTwo++){
+                    if (words[positionalWordOne][positionalLetterOne]==words[positionalWordTwo][positionalLetterTwo]){
+                        printf("%c in %s and %s (%d - %d)\n", words[positionalWordOne][positionalLetterOne], words[positionalWordOne],words[positionalWordTwo], positionalLetterOne+1, positionalLetterTwo+1);
+                    }
+                }
+            }
         }
     }
-
-    return 0;
 }
-*/
 
 int main(){
   le_caca_palavras("palavras.txt");
+  encontra_intersecao();
   /* int** tabuleiro = malloc(N*sizeof(int*))
   for append  tabuleiro no malloc */
 }
