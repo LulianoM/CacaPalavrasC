@@ -51,9 +51,26 @@ void encontra_intersecao(){
     }
 }
 
+int max_number_words(){
+    int positionalLetter, maxLenWord = 0;
+    for(positionalLetter = 0; positionalLetter<MAX_NUM_PALAVRAS; positionalLetter++){
+        if(strlen(words[positionalLetter])>maxLenWord){
+            maxLenWord = strlen(words[positionalLetter]);
+        }
+    }
+    return maxLenWord-1;
+}
+
+void cria_tabuleiro(){
+    int    lenWords    = max_number_words();
+    int    sizeOfBoard = (lenWords*2);
+    char   bord[sizeOfBoard][sizeOfBoard];
+}
+
 int main(){
   le_caca_palavras("palavras.txt");
   encontra_intersecao();
+  cria_tabuleiro();
   /* int** tabuleiro = malloc(N*sizeof(int*))
   for append  tabuleiro no malloc */
 }
