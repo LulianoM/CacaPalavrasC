@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/lucianomartins/Documents/CacaPalavrasC'
+gcc importFile.c -o importFile.out
+./importFile.out
+make: Leaving directory `/Users/lucianomartins/Documents/CacaPalavrasC'
+ 

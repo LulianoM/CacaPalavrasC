@@ -1,3 +1,3 @@
 run-compille:
-	gcc importFile.c -o importFile.out
-	./importFile.out
+	gcc cacaPalavras.c -o cacaPalavras.out
+	./cacaPalavras.out
