@@ -4,6 +4,8 @@
 #include <time.h>
 #include "variables.h"
 
+/* Acessa o código completo no github para baixar estou atualizando via Git-> https://github.com/LulianoM/CacaPalavrasC */
+
 char   line[MAX_LINE_LENGTH];
 char   words[MAX_NUM_PALAVRAS][MAX_LINE_LENGTH];
 
@@ -28,6 +30,10 @@ void le_caca_palavras(char *arquivo) {
     }
      
     fclose(f);
+}
+
+void sanitize_words(){
+    tolower();
 }
 
 void encontra_intersecao(){
@@ -61,16 +67,33 @@ int max_number_words(){
     return maxLenWord-1;
 }
 
-void cria_tabuleiro(){
+int calculate_size_of_board(){
     int    lenWords    = max_number_words();
     int    sizeOfBoard = (lenWords*2);
+    return sizeOfBoard;
+}
+
+char cria_tabuleiro(){
+    int sizeOfBoard = calculate_size_of_board();
     char   bord[sizeOfBoard][sizeOfBoard];
+    return bord;
+}
+
+void imprime(char T){
+    int row, column=0;
+    int sizeOfBoard = calculate_size_of_board();
+    char board[sizeOfBoard][sizeOfBoard];
+    {
+        for (column = 0; column < sizeOfBoard; column++)
+        {
+            printf("%d\t", board[row][column]);
+        }
+        printf("\n");
+    }
 }
 
 int main(){
   le_caca_palavras("palavras.txt");
   encontra_intersecao();
   cria_tabuleiro();
-  /* int** tabuleiro = malloc(N*sizeof(int*))
-  for append  tabuleiro no malloc */
 }
