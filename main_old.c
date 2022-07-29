@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "../variables/variables.h"
+#include "variables/variables.h"
 
 /* Acessa o código completo no github para baixar estou atualizando via Git-> https://github.com/LulianoM/CacaPalavrasC
 - Foi definido que -> As palavras marcadas serão aquelas MAIÚSCULAS

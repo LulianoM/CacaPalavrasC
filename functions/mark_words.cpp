@@ -1,23 +1,11 @@
-bool verifica(vector<informacoesPalavra> astInformacoesPalavras, informacoesPosicao stInformacoesPosicao)
-{
-    for (const informacoesPalavra& stInformacoesPalavra : astInformacoesPalavras)
-    {
-        if (stInformacoesPalavra.bMarcada)
-            continue;
+#include <stdio.h>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <algorithm>
 
-        int a = string(stInformacoesPalavra.szPalavra).length();
-
-        if (stInformacoesPalavra.iLinha                     == stInformacoesPosicao.iLinha      &&
-            stInformacoesPalavra.iColuna                    == stInformacoesPosicao.iColuna     &&
-            stInformacoesPalavra.cOrientacao                == stInformacoesPosicao.cOrientacao &&
-            string(stInformacoesPalavra.szPalavra).length() == stInformacoesPosicao.iTamanhoPalavra)
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
+#include "../variables/variables.h"
+#include "../variables/structs.h"
 
 void marca_horizontal(vector<vector<UCHAR>>& aaTabuleiro, const informacoesPosicao& stInformacoesPosicao, vector<informacoesPalavra>& astInformacoesPalavras)
 {
