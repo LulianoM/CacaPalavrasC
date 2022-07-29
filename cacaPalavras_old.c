@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "variables.h"
+#include "../variables/variables.h"
 
-/* Acessa o código completo no github para baixar estou atualizando via Git-> https://github.com/LulianoM/CacaPalavrasC */
+/* Acessa o código completo no github para baixar estou atualizando via Git-> https://github.com/LulianoM/CacaPalavrasC
+- Foi definido que -> As palavras marcadas serão aquelas MAIÚSCULAS
+ */
 
 char   line[MAX_LINE_LENGTH];
 char   words[MAX_NUM_PALAVRAS][MAX_LINE_LENGTH];
@@ -47,8 +49,11 @@ void encontra_intersecao(){
             }
             /* refactor para uma func no futuro */
             for(positionalLetterOne=0; positionalLetterOne<strlen(words[positionalWordOne]); positionalLetterOne++){
+                
                 for (positionalLetterTwo=0; positionalLetterTwo<strlen(words[positionalWordTwo]);positionalLetterTwo++){
+                    
                     if (words[positionalWordOne][positionalLetterOne]==words[positionalWordTwo][positionalLetterTwo]){
+                        
                         printf("%c in %s and %s (%d - %d)\n", words[positionalWordOne][positionalLetterOne], words[positionalWordOne],words[positionalWordTwo], positionalLetterOne+1, positionalLetterTwo+1);
                     }
                 }

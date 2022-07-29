@@ -1,6 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/lucianomartins/Documents/CacaPalavrasC'
-gcc cacaPalavras.c -o cacaPalavras.out
-./cacaPalavras.out
-make: Leaving directory `/Users/lucianomartins/Documents/CacaPalavrasC'
- 
