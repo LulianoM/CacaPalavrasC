@@ -1,3 +1,14 @@
+#include <stdio.h>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <algorithm>
+
+#include "../variables/variables.h"
+#include "../variables/structs.h"
+
+using namespace std;
+
 bool valida_parametros(string& sEntrada, const vector<vector<UCHAR>>& aaTabuleiro, informacoesPosicao& stInformacoesPosicao)
 {
     if (sEntrada.length() < 4)

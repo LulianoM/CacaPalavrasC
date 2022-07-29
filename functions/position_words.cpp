@@ -1,4 +1,9 @@
-//Adicionando as variáveis de ambientes e as estruturas
+#include <stdio.h>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <algorithm>
+
 #include "../variables/variables.h"
 #include "../variables/structs.h"
 
